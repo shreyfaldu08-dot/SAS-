@@ -1,0 +1,479 @@
+<!doctype html>
+<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--surface:#f4f8fc;--surface-raised:#ffffff;--surface-sunk:#e4eef8;--glacier:#d3e7fa;--line:#c9dbee;--line-strong:#5f84b0;--ink:#0a1b33;--ink-muted:#45607f;--brand:#1452b8;--brand-strong:#0c3a86;--on-brand:#ffffff;--abyss:#071a33;--abyss-raised:#0e2a4d;--on-abyss:#eaf4fd;--on-abyss-muted:#9fb9d5;--sky:#6cb8f0;--on-sky:#04101f;--signal:#a14a06;--signal-soft:#fdecd8;--link:#1452b8;--edge:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee;--shadow-panel:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee, 0 18px 40px -18px #0a1b3340;--shadow-abyss:inset 0 1px 0 #ffffff1a, 0 0 0 1px #1c3a60;--focus-ring:0 0 0 2px #f4f8fc, 0 0 0 4px #1452b8;--focus-ring-abyss:0 0 0 2px #071a33, 0 0 0 4px #6cb8f0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-32:128px;--radius-xs:2px;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--font-display:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-sans:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;--text-display-xl:700 76px/76px var(--font-display);--text-display:700 52px/56px var(--font-display);--text-heading-1:650 40px/46px var(--font-display);--text-heading-2:650 26px/32px var(--font-display);--text-heading-3:600 19px/26px var(--font-display);--text-lede:400 20px/31px var(--font-sans);--text-body:400 16px/26px var(--font-sans);--text-body-sm:400 14px/22px var(--font-sans);--text-label:600 14px/20px var(--font-sans);--text-eyebrow:500 12px/16px var(--font-mono);--text-spec:400 13px/20px var(--font-mono);--text-numeral:500 56px/56px var(--font-mono);}}</style>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Structural Acrylic Systems — Homepage v27 (responsive)</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#f8f9fa}
+*{box-sizing:border-box}
+h1,h2,h3{font-family:'Sora','Manrope',sans-serif}
+a{color:#0a1628}a:hover{color:#2a3a52}
+.dark a{color:#f5f5f5}.dark a:hover{color:#c5ccd5}
+a:focus-visible,button:focus-visible{outline:none;box-shadow:0 0 0 2px #f8f9fa,0 0 0 4px #0a1628}
+.dark a:focus-visible,.dark button:focus-visible{box-shadow:0 0 0 2px #0a1628,0 0 0 4px #c5ccd5}
+.wrap{max-width:calc(1280px + 2 * clamp(20px, 5vw, 80px));margin:0 auto;padding-left:clamp(20px, 5vw, 80px);padding-right:clamp(20px, 5vw, 80px)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase}
+.navl{color:#f5f5f5;text-decoration:none;font-size:15px;font-weight:500;opacity:.9}.navl:hover{opacity:1;color:#ffffff}
+.tlink{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.arrow svg{transition:transform 180ms ease}.arrow:hover svg{transform:translateX(4px)}
+.card{transition:transform 220ms ease,box-shadow 220ms ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 0 0 1px #dfe3e8,0 24px 48px -28px #0a162859}
+.card img,.tile img{transition:transform 500ms ease}.card:hover img,.tile:hover img{transform:scale(1.05)}
+.step{transition:transform 220ms ease,box-shadow 220ms ease}
+.step:hover{transform:translateY(-4px);box-shadow:0 0 0 1px #c5ccd5,0 24px 48px -28px #0a162859}
+.faq{transition:background 160ms ease}
+@keyframes up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.reel{animation:up 36s linear infinite}.reel:hover{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.reel{animation:none}}
+@keyframes side{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:980px){
+ .herorow{flex-direction:column!important;align-items:stretch!important;gap:36px!important}
+ .reelbox{flex:none!important;width:100%!important;height:150px!important;border-radius:22px!important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)!important;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)!important}
+ .reel{flex-direction:row!important;width:max-content!important;animation:side 32s linear infinite!important}
+ .reel img{flex:none!important;width:220px!important;height:150px!important}
+}
+@media (max-width:540px){.reelbox{height:120px!important}.reel img{width:170px!important;height:120px!important}}
+@media (prefers-reduced-motion: reduce){.reel{animation:none!important}}
+
+/* ---------- responsive ---------- */
+h1,h2,h3{overflow-wrap:break-word}
+img{max-width:100%}
+@media (max-width:1024px){.navlinks{gap:20px!important}}
+@media (max-width:900px){
+ .navlinks,.navcta{display:none!important}
+ .menubtn{display:inline-flex!important}
+ .stage{height:auto!important;display:flex;flex-direction:column}
+ .stageimg{position:relative!important;height:340px!important;inset:auto!important}
+ .stagefade{display:none!important}
+ .stagecap{position:static!important;max-width:none!important;padding:24px 22px 8px}
+ .facts{position:static!important;width:auto!important;margin:8px 16px 16px!important;background:#0a1628!important}
+ .procimg{min-height:420px!important}
+}
+@media (max-width:760px){
+ .stat{box-shadow:none!important;padding:20px 0 0!important;border-top:1px solid #dfe3e8}
+ .stat:first-child{border-top:0;padding-top:0!important}
+ .career{grid-template-columns:1fr!important;gap:20px!important}
+ .careerline{display:none!important}
+}
+@media (max-width:540px){
+ .diffs{grid-template-columns:1fr!important}
+ .stageimg{height:260px!important}
+ .procimg{min-height:360px!important}
+}
+</style>
+</helmet>
+
+<div style="font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; color: #0a1628; background: #f8f9fa; width: 100%">
+
+<!-- ================= 1. HERO (dark) ================= -->
+<section id="top" class="dark" aria-labelledby="h1" style="position: relative; min-height: clamp(700px, 60vw, 900px); background: #0a1628; color: #f5f5f5; overflow: hidden; display: flex; flex-direction: column">
+  <img src="./assets/da08b2474e1152c78e91873ee4655eaf.jpg" alt="Diver behind an underwater structural acrylic viewing window" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, #0a1628f7 0%, #0a1628cc 42%, #0a162866 75%, #0a162899 100%)"></div>
+
+  <header style="position: relative; z-index: 3">
+    <nav aria-label="Primary" class="wrap" style="min-height: 92px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none"><svg width="34" height="34" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect x="14" y="4" width="8" height="28" rx="1" fill="#c5ccd5" fill-opacity=".22" stroke="#c5ccd5" stroke-width="1.5"></rect><path d="M3 11h8M3 16h8M3 21h8" stroke="#c5ccd5" stroke-width="1.5"></path><path d="M27 8v20M25 8h4M25 28h4" stroke="#c5ccd5" stroke-width="1.2"></path></svg><span style="display: flex; flex-direction: column; gap: 3px"><span style="font-weight: 800; font-size: 18px; letter-spacing: 0.24em; line-height: 1">SAS</span><span style="font-size: 9px; font-weight: 700; letter-spacing: 0.22em; color: #c5ccd5">STRUCTURAL ACRYLIC SYSTEMS</span></span></a>
+      <div class="navlinks" style="display: flex; flex-wrap: wrap; gap: 34px"><a class="navl" href="#founder">About</a><a class="navl" href="#capabilities">Capabilities</a><a class="navl" href="#featured">Projects</a><a class="navl" href="#industries">Industries</a><a class="navl" href="#faqs">FAQs</a></div>
+      <a href="#contact" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; background: #f5f5f514; box-shadow: inset 0 0 0 1px #c5ccd580; border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none" class="navcta">Contact Us</a>
+      <button class="menubtn" onClick="{{toggleMenu}}" aria-expanded="{{menuOpen}}" aria-controls="mobilemenu" aria-label="Open menu" style="display: none; align-items: center; justify-content: center; width: 48px; height: 48px; border: 0; border-radius: 24px; background: #f5f5f5; color: #0a1628; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+      <sc-if value="{{showMenu}}" hint-placeholder-val="{{ false }}">
+        <div id="mobilemenu" style="flex: 1 1 100%; display: flex; flex-direction: column; gap: 4px; padding: 12px; background: #0a1628f2; border-radius: 24px; box-shadow: inset 0 0 0 1px #ffffff26"><a class="navl" href="#founder" style="padding: 12px 14px">About</a><a class="navl" href="#capabilities" style="padding: 12px 14px">Capabilities</a><a class="navl" href="#featured" style="padding: 12px 14px">Projects</a><a class="navl" href="#industries" style="padding: 12px 14px">Industries</a><a class="navl" href="#faqs" style="padding: 12px 14px">FAQs</a><a class="navl" href="#contact" style="padding: 12px 14px">Contact Us</a></div>
+      </sc-if>
+    </nav>
+  </header>
+
+  <div class="wrap herorow" style="position: relative; z-index: 2; flex: 1; width: 100%; display: flex; align-items: center; gap: 48px; padding-top: 32px; padding-bottom: 80px">
+    <div style="flex: 1 1 min(560px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <span class="eyebrow" style="display: flex; align-items: center; gap: 14px; color: #c5ccd5"><span aria-hidden="true" style="width: 40px; height: 1px; background: #b8975a"></span>Houston, Texas · Since [Year]</span>
+      <h1 id="h1" style="margin: 0; font-size: clamp(40px, 6.8vw, 104px); line-height: 0.96; letter-spacing: -0.025em; color: #ffffff">Engineered for the <span style="color: #c5ccd5">Extraordinary</span></h1>
+      <p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 31px; color: #e3e7ec">Structural acrylic for luxury pools, aquariums, zoos, and architectural builds. Full scope, US-fabricated, founder-led.</p>
+      <span style="font-size: 14px; font-weight: 700; color: #c5ccd5">Led by Bart Baker, 30 years in structural acrylic</span>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; padding-top: 4px">
+        <a class="arrow" href="#contact" style="display: inline-flex; align-items: center; gap: 12px; min-height: 58px; padding: 0 8px 0 28px; background: #f5f5f5; color: #0a1628; border-radius: 999px; font-size: 16px; font-weight: 800; text-decoration: none">Discuss Your Project<span style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 21px; background: #0a1628; color: #f5f5f5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></a>
+        <a class="tlink" href="#featured" style="color: #f5f5f5">View a Recent Installation</a>
+      </div>
+    </div>
+    <!-- moving photo reel: a nod to the mosaic, in motion -->
+    <div class="reelbox" aria-hidden="true" style="flex: 0 0 300px; height: 560px; overflow: hidden; border-radius: 28px; -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent)">
+      <div class="reel" style="display: flex; flex-direction: column; gap: 12px">
+        <sc-for list="{{reel}}" as="r" hint-placeholder-count="12"><img src="{{r}}" alt="" style="display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 22px; box-shadow: 0 0 0 1px #ffffff26"></sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. STATS STRIP (light) — rises out of the hero, flows into the founder block ================= -->
+<section aria-label="SAS at a glance" style="position: relative; z-index: 2; margin-top: -40px; background: #f8f9fa; border-radius: 40px 40px 0 0">
+  <div class="wrap">
+    <dl style="margin: 0; padding: clamp(40px, 4vw, 56px) 0 clamp(36px, 4vw, 52px); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 0; border-bottom: 1px solid #dfe3e8">
+      <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+        <div class="stat" style="padding: 0 clamp(16px, 2.4vw, 32px); display: flex; align-items: flex-start; gap: 16px; box-shadow: {{s.divider}}">
+          <span style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; background: #ffffff; box-shadow: inset 0 0 0 1px #c5ccd5; color: #0a1628"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{s.icon}}"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 6px"><dt style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -0.03em">{{s.h}}</dt><dd style="margin: 0; font-size: 14px; line-height: 22px; color: #5a6270">{{s.sub}}</dd></span>
+        </div>
+      </sc-for>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= 3. FOUNDER BLOCK (light) — portrait + career line ================= -->
+<section id="founder" aria-labelledby="s-founder" style="background: #f8f9fa; padding: clamp(64px, 7vw, 104px) 0 clamp(80px, 9vw, 128px)">
+  <div class="wrap" style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; gap: clamp(40px, 5vw, 80px); align-items: center">
+    <!-- Right 45%: portrait with big stat + 2x2 differentiators -->
+    <div style="flex: 45 1 min(400px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <div style="position: relative; height: 460px; border-radius: 32px; overflow: hidden; background: #0a1628">
+        <img src="./assets/c7b8334e2b7306163f7ddf38bb3386e1.jpg" alt="SAS crew rigging an acrylic panel on site (placeholder until Bart Baker's headshot is supplied)" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+        <span aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, #0a1628e6 0%, #0a162859 40%, #0a162800 65%)"></span>
+        <span style="position: absolute; left: 20px; top: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; background: #ffffffeb; border-radius: 999px; font-size: 13px; font-weight: 700; color: #0a1628"><span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 14px; background: #0a1628; color: #f5f5f5; font-size: 11px; font-weight: 800">BB</span>Bart Baker · Founder</span>
+        <div style="position: absolute; left: 24px; right: 24px; bottom: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; color: #f5f5f5">
+          <span style="display: flex; align-items: flex-end; gap: 12px"><span style="font-family: 'Sora', sans-serif; font-size: clamp(72px, 7vw, 104px); line-height: 0.8; font-weight: 700; letter-spacing: -0.06em; color: #ffffff">30+</span><span style="padding-bottom: 4px; font-size: 13px; font-weight: 700; line-height: 18px; color: #c5ccd5">Years<br>structural acrylic</span></span>
+          <span aria-hidden="true" style="width: 40px; height: 1px; margin-bottom: 12px; background: #c5ccd5"></span>
+        </div>
+      </div>
+      <ul class="diffs" style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{fdiffs}}" as="d" hint-placeholder-count="4">
+          <li style="padding: 20px; background: {{d.bg}}; color: {{d.fg}}; border-radius: 24px; box-shadow: 0 0 0 1px {{d.ring}}; display: flex; flex-direction: column; gap: 12px">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 20px; background: {{d.iconBg}}; color: {{d.iconFg}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{d.icon}}"></path></svg></span>
+            <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 700">{{d.t}}</span><span style="font-size: 13px; line-height: 20px; color: {{d.muted}}">{{d.d}}</span></span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+
+    <!-- Left 55%: story + career line -->
+    <div style="flex: 55 1 min(460px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <span class="eyebrow" style="color: #5a6270">The founder</span>
+      <h2 id="s-founder" style="margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em">The Experience Behind SAS</h2>
+      <p style="margin: 0; max-width: 600px; font-size: 18px; line-height: 30px; color: #3c4553">Bart Baker brings more than 30 years of structural acrylic experience to every SAS project. Before founding SAS, he spent 26 years leading global operations at one of the world's largest structural acrylic manufacturers, and five years as President of a US acrylic company he built from the ground up.</p>
+
+      <!-- career line -->
+      <ol class="career" aria-label="Bart Baker's career" style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+        <li class="careerline" aria-hidden="true" style="position: absolute; left: 20px; right: 20px; top: 19px; height: 1px; background: #c5ccd5"></li>
+        <li style="position: relative; display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 20px; background: #ffffff; box-shadow: inset 0 0 0 1px #c5ccd5"></span><span style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.04em; line-height: 1">26 yrs</span><span style="font-size: 14px; line-height: 21px; color: #5a6270">Leading global operations at a world-leading acrylic manufacturer</span></li>
+        <li style="position: relative; display: flex; flex-direction: column; gap: 12px"><span style="width: 40px; height: 40px; border-radius: 20px; background: #ffffff; box-shadow: inset 0 0 0 1px #c5ccd5"></span><span style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.04em; line-height: 1">5 yrs</span><span style="font-size: 14px; line-height: 21px; color: #5a6270">President of a US acrylic company he built from the ground up</span></li>
+        <li style="position: relative; display: flex; flex-direction: column; gap: 12px"><span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 20px; background: #0a1628; color: #f5f5f5; font-size: 10px; font-weight: 800; letter-spacing: 0.06em">SAS</span><span style="font-family: 'Sora', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.04em; line-height: 1">Today</span><span style="font-size: 14px; line-height: 21px; color: #5a6270">Founder of SAS, overseeing every project personally</span></li>
+      </ol>
+
+      <p style="margin: 0; max-width: 560px; padding: 22px 26px; background: #ffffff; border-radius: 24px; box-shadow: 0 0 0 1px #e6e9ed; font-family: 'Sora', sans-serif; font-size: 21px; line-height: 31px; font-weight: 500; letter-spacing: -0.02em">The most experienced person on your project is the person who owns it.</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+        <a class="arrow" href="#contact" style="display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 28px; background: #0a1628; color: #f5f5f5; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none">Discuss Your Project<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+        <a class="tlink" href="#founder">Learn more about Bart</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. FEATURED PROJECT (dark) — the build story ================= -->
+<section id="featured" class="dark" aria-labelledby="s-feat" style="background: #0a1628; color: #f5f5f5; padding: clamp(80px, 9vw, 120px) 0">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 36px">
+    <!-- header -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 28px">
+      <div style="flex: 1 1 min(520px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <span class="eyebrow" style="display: flex; align-items: center; gap: 12px; color: #c5ccd5"><span aria-hidden="true" style="width: 32px; height: 1px; background: #c5ccd5"></span>Featured Project · Texas, USA</span>
+        <h2 id="s-feat" style="margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; color: #ffffff">Luxury Residential Pool</h2>
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 28px; color: #c5ccd5">Full-scope panel installation. Engineering, fabrication, installation, waterproofing. One team, start to finish.</p>
+      </div>
+      <a class="arrow" href="#contact" style="display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 8px 0 26px; background: #f5f5f5; color: #0a1628; border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none">Discuss a Similar Project<span style="display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 21px; background: #0a1628; color: #f5f5f5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+
+    <!-- stage: big photo of the selected build step + facts panel -->
+    <div class="stage" style="position: relative; height: clamp(520px, 48vw, 680px); border-radius: 32px; overflow: hidden; background: #12223a">
+      <img class="stageimg" src="{{fs.img}}" alt="{{fs.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 400ms ease">
+      <span class="stagefade" aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, #0a162800 40%, #0a1628b3 100%)"></span>
+      <span class="stagefade" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(0deg, #0a1628d9, #0a162800)"></span>
+
+      <!-- stage caption -->
+      <div class="stagecap" style="position: absolute; left: clamp(20px, 3vw, 36px); bottom: clamp(20px, 3vw, 36px); max-width: 460px; display: flex; flex-direction: column; gap: 10px">
+        <span style="align-self: flex-start; padding: 8px 14px; background: #f5f5f5; color: #0a1628; border-radius: 999px; font-size: 13px; font-weight: 800">Stage {{fs.n}} of 4</span>
+        <span style="font-family: 'Sora', sans-serif; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: -0.03em; color: #ffffff">{{fs.title}}</span>
+        <span style="font-size: 15px; line-height: 24px; color: #dfe3e8">{{fs.desc}}</span>
+      </div>
+
+      <!-- facts panel -->
+      <dl class="facts" style="position: absolute; right: clamp(16px, 2.4vw, 28px); top: clamp(16px, 2.4vw, 28px); width: min(340px, calc(100% - 32px)); margin: 0; padding: 8px 24px; background: #0a1628d9; border-radius: 24px; box-shadow: inset 0 0 0 1px #ffffff26">
+        <div style="padding: 16px 0; border-bottom: 1px solid #ffffff1f; display: flex; flex-direction: column; gap: 4px"><dt class="eyebrow" style="font-size: 11px; color: #aab2bd">Project facts</dt></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid #ffffff1f; display: flex; justify-content: space-between; gap: 16px"><dt style="font-size: 14px; color: #aab2bd">Location</dt><dd style="margin: 0; font-size: 14px; font-weight: 700; text-align: right">Texas, USA</dd></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid #ffffff1f; display: flex; justify-content: space-between; gap: 16px"><dt style="font-size: 14px; color: #aab2bd">Project type</dt><dd style="margin: 0; font-size: 14px; font-weight: 700; text-align: right">Luxury residential pool panel</dd></div>
+        <div style="padding: 14px 0; border-bottom: 1px solid #ffffff1f; display: flex; justify-content: space-between; gap: 16px"><dt style="font-size: 14px; color: #aab2bd">Scope</dt><dd style="margin: 0; font-size: 14px; font-weight: 700; text-align: right">Engineering, fabrication, crane, installation, waterproofing, sealing</dd></div>
+        <div style="padding: 14px 0; display: flex; justify-content: space-between; gap: 16px"><dt style="font-size: 14px; color: #aab2bd">Delivery</dt><dd style="margin: 0; font-size: 14px; font-weight: 700; text-align: right">One SAS team</dd></div>
+      </dl>
+    </div>
+
+    <!-- build timeline -->
+    <div style="position: relative">
+      <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #ffffff1f"></div>
+      <div aria-hidden="true" style="position: absolute; left: 0; top: 0; height: 2px; width: {{fsProgress}}; background: #c5ccd5; transition: width 400ms ease"></div>
+      <ol role="tablist" aria-label="Build stages" style="margin: 0; padding: 22px 0 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px">
+        <sc-for list="{{fstages}}" as="b" hint-placeholder-count="4">
+          <li>
+            <button role="tab" aria-selected="{{b.on}}" onClick="{{b.pick}}" style="width: 100%; display: flex; align-items: center; gap: 14px; padding: 10px 16px 10px 10px; border: 0; border-radius: 24px; background: {{b.bg}}; box-shadow: inset 0 0 0 1px {{b.ring}}; color: {{b.fg}}; font-family: inherit; text-align: left; cursor: pointer; transition: background 220ms ease">
+              <img src="{{b.img}}" alt="" style="flex: none; width: 76px; height: 76px; border-radius: 18px; object-fit: cover; opacity: {{b.op}}">
+              <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span style="font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: {{b.numFg}}">STAGE 0{{b.n}}</span><span style="font-size: 15px; font-weight: 700; line-height: 20px">{{b.title}}</span></span>
+            </button>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. HOW IT WORKS (light theme, interactive) ================= -->
+<section id="process" aria-labelledby="s-proc" style="background: #ffffff; padding: clamp(64px, 7vw, 104px) 0">
+  <div class="wrap">
+    <div style="position: relative; overflow: hidden; padding: clamp(32px, 4.5vw, 64px); background: #f8f9fa; color: #0a1628; box-shadow: 0 0 0 1px #e6e9ed; border-radius: 40px; display: flex; flex-wrap: wrap; gap: clamp(32px, 4vw, 64px); align-items: stretch">
+
+      <!-- Left: heading + step list -->
+      <div style="position: relative; flex: 5 1 min(400px, 100%); min-width: 0; display: flex; flex-direction: column; gap: 28px">
+        <span class="eyebrow" style="display: flex; align-items: center; gap: 12px; color: #5a6270"><span aria-hidden="true" style="width: 32px; height: 1px; background: #8a939e"></span>How it works</span>
+        <h2 id="s-proc" style="margin: 0; font-size: clamp(40px, 4.4vw, 64px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; color: #0a1628">A Process Built on <span style="color: #5a6270">30 Years of Acrylic</span></h2>
+        <ol role="tablist" aria-label="Process steps" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+          <sc-for list="{{steps}}" as="st" hint-placeholder-count="4">
+            <li>
+              <button role="tab" aria-selected="{{st.on}}" onClick="{{st.pick}}" onMouseEnter="{{st.pick}}" style="width: 100%; display: grid; grid-template-columns: 56px minmax(0, 1fr) 24px; align-items: center; gap: 16px; min-height: 76px; padding: 10px 20px 10px 10px; border: 0; border-radius: 999px; background: {{st.bg}}; color: {{st.fg}}; box-shadow: inset 0 0 0 1px {{st.ring}}; font-family: inherit; text-align: left; cursor: pointer; transition: background 220ms ease, color 220ms ease">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 28px; background: {{st.numBg}}; color: {{st.numFg}}; font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 600">0{{st.n}}</span>
+                <span style="font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.02em">{{st.title}}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+              </button>
+            </li>
+          </sc-for>
+        </ol>
+        <a class="arrow" href="#process" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; background: #0a1628; color: #f5f5f5; border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none">More About Our Process<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      </div>
+
+      <!-- Right: photo of the active step + detail -->
+      <div class="procimg" style="position: relative; flex: 6 1 min(440px, 100%); min-width: 0; min-height: 560px; border-radius: 28px; overflow: hidden; background: #12223a">
+        <img src="{{cur.img}}" alt="{{cur.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+        <span aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, #0a1628f2 0%, #0a162866 45%, #0a162800 70%)"></span>
+        <span style="position: absolute; right: 20px; top: 20px; padding: 8px 14px; background: #0a1628cc; box-shadow: inset 0 0 0 1px #ffffff33; border-radius: 999px; font-size: 13px; font-weight: 700; color: #f5f5f5">Step {{cur.n}} of 4</span>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 14px">
+          <span aria-hidden="true" style="font-family: 'Sora', sans-serif; font-size: clamp(72px, 8vw, 120px); line-height: 0.8; font-weight: 700; letter-spacing: -0.06em; color: #c5ccd5">0{{cur.n}}</span>
+          <h3 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: #ffffff">{{cur.title}}</h3>
+          <p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 26px; color: #dfe3e8">{{cur.desc}}</p>
+          <div aria-hidden="true" style="display: flex; gap: 6px; padding-top: 8px">
+            <sc-for list="{{steps}}" as="b" hint-placeholder-count="4"><span style="flex: 1; height: 3px; border-radius: 2px; background: {{b.bar}}"></span></sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. CAPABILITIES GRID — WHAT WE BUILD (light) ================= -->
+<section id="capabilities" aria-labelledby="s-cap" style="background: #f8f9fa; padding: clamp(80px, 9vw, 128px) 0">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 18px; max-width: 720px">
+      <span class="eyebrow" style="color: #5a6270">Capabilities</span>
+      <h2 id="s-cap" style="margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em">What We Build</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 29px; color: #5a6270">From engineering input to post-install inspection. SAS handles the complete scope.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 20px">
+      <sc-for list="{{caps}}" as="c" hint-placeholder-count="6">
+        <a class="card" href="/capabilities/" style="display: flex; flex-direction: column; gap: 20px; padding: 12px 12px 26px; background: #ffffff; border-radius: 32px; box-shadow: 0 0 0 1px #e6e9ed; color: #0a1628; text-decoration: none">
+          <div style="height: 220px; border-radius: 22px; overflow: hidden; background: #0a1628"><img src="{{c.img}}" alt="{{c.alt}}" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
+          <div style="padding: 0 14px; display: flex; flex-direction: column; gap: 10px">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">{{c.title}}</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6270">{{c.desc}}</p>
+            <span class="arrow" style="display: inline-flex; align-items: center; gap: 8px; padding-top: 6px; font-size: 14px; font-weight: 700">Learn More<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRUCTURAL ACRYLIC SOLUTIONS (light) ================= -->
+
+
+<!-- ================= 6. INDUSTRIES (dark, full-bleed tiles) ================= -->
+<section id="industries" class="dark" aria-labelledby="s-ind" style="background: #0a1628; color: #f5f5f5; padding-top: clamp(72px, 8vw, 112px)">
+  <div class="wrap" style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; padding-bottom: 48px">
+    <span class="eyebrow" style="color: #c5ccd5">Industries</span>
+    <h2 id="s-ind" style="margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; color: #ffffff">Industries We Serve</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+    <sc-for list="{{industries}}" as="t" hint-placeholder-count="4">
+      <a class="tile" href="{{t.href}}" style="position: relative; display: block; height: clamp(420px, 34vw, 520px); overflow: hidden; color: #ffffff; text-decoration: none; border-right: 1px solid #0a1628">
+        <img src="{{t.img}}" alt="{{t.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+        <span aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, #0a1628f2 0%, #0a16288c 45%, #0a162826 100%)"></span>
+        <span style="position: absolute; left: 28px; right: 28px; bottom: 32px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -0.02em">{{t.title}}</span>
+          <span style="font-size: 15px; line-height: 23px; color: #dfe3e8">{{t.sub}}</span>
+          <span class="arrow" style="display: inline-flex; align-items: center; gap: 8px; padding-top: 8px; font-size: 14px; font-weight: 700; color: #c5ccd5">Explore<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+        </span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ================= 7. FINAL CTA (dark, full-width, centered) ================= -->
+<section id="contact" class="dark" aria-labelledby="s-cta" style="position: relative; background: #0a1628; color: #f5f5f5; overflow: hidden; border-top: 1px solid #ffffff14">
+  <img src="./assets/b965119dd82acd3d263984228dcb23d7.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: #0a1628d1"></div>
+  <div class="wrap" style="position: relative; padding-top: clamp(96px, 11vw, 160px); padding-bottom: clamp(96px, 11vw, 160px); display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center">
+    <span aria-hidden="true" style="width: 48px; height: 1px; background: #b8975a"></span>
+    <h2 id="s-cta" style="margin: 0; max-width: 820px; font-size: clamp(40px, 5.4vw, 80px); line-height: 1; font-weight: 600; letter-spacing: -0.045em; color: #ffffff">Ready to Discuss Your Project?</h2>
+    <p style="margin: 0; max-width: 640px; font-size: 18px; line-height: 30px; color: #dfe3e8">Whether you are pricing a pool panel, planning an aquarium installation, or need engineering input early in the design phase, this is the right conversation to have before the scope gets complicated.</p>
+    <a class="arrow" href="#contact" style="display: inline-flex; align-items: center; gap: 12px; min-height: 58px; padding: 0 30px; background: #f5f5f5; color: #0a1628; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none">Discuss Your Project<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+    <span style="font-size: 16px; color: #c5ccd5">Or call Bart directly: <a href="#contact" style="font-weight: 700">[(XXX) XXX-XXXX]</a></span>
+  </div>
+</section>
+
+<!-- ================= FAQs (light) ================= -->
+<section id="faqs" aria-labelledby="s-faq" style="background: #f8f9fa; padding: clamp(80px, 9vw, 128px) 0">
+  <div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 16px"><span class="eyebrow" style="color: #5a6270">FAQs</span><h2 id="s-faq" style="margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.045em">Frequently Asked Questions</h2></div>
+      <a href="#faqs" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; background: #0a1628; color: #f5f5f5; border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none">Read More FAQs</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 0 32px; align-items: start">
+      <sc-for list="{{faqCols}}" as="col" hint-placeholder-count="2">
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{col.items}}" as="f" hint-placeholder-count="4">
+            <div style="border-bottom: 1px solid #dfe3e8">
+              <button class="faq" onClick="{{f.toggle}}" aria-expanded="{{f.expanded}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 68px; padding: 18px 4px; border: 0; background: transparent; font-family: inherit; font-size: 17px; font-weight: 700; color: #0a1628; text-align: left; cursor: pointer">{{f.q}}<span aria-hidden="true" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 16px; background: {{f.iconBg}}; color: {{f.iconFg}}; font-size: 18px; line-height: 1">{{f.sign}}</span></button>
+              <sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}">
+                <p style="margin: 0; padding: 0 48px 22px 4px; font-size: 15px; line-height: 25px; color: #5a6270">{{f.a}}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. FOOTER (dark) ================= -->
+<footer class="dark" style="background: #0a1628; color: #c5ccd5">
+  <div class="wrap" style="padding-top: 72px; padding-bottom: 32px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #ffffff; letter-spacing: 0.04em">SAS</span><span style="font-size: 10px; font-weight: 600; letter-spacing: 0.2em">STRUCTURAL ACRYLIC SYSTEMS</span></span>
+        <p style="margin: 0; font-size: 14px; line-height: 22px">Structural acrylic for luxury pools, aquariums, zoos and architectural builds. US-fabricated in Houston, Texas.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px"><span style="font-size: 15px; font-weight: 700; color: #ffffff">Company</span><a href="#founder">About SAS</a><a href="#founder">Bart Baker</a><a href="#process">Our Process</a><a href="#faqs">FAQs</a></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px"><span style="font-size: 15px; font-weight: 700; color: #ffffff">Capabilities</span><a href="/capabilities/">Fabrication</a><a href="/capabilities/">Installation</a><a href="/capabilities/">Inspection</a><a href="/capabilities/">Refurbishment</a><a href="/capabilities/">Waterproofing</a></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px"><span style="font-size: 15px; font-weight: 700; color: #ffffff">Industries</span><a href="/industries/#luxury-pools">Luxury Pools</a><a href="/industries/#public-aquariums">Public Aquariums</a><a href="/industries/#zoos">Zoos &amp; Wildlife Parks</a><a href="/industries/#architectural">Architectural</a></div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px"><span style="font-size: 15px; font-weight: 700; color: #ffffff">Contact</span><span>Phone: [(XXX) XXX-XXXX]</span><span>Email: [hello@yourdomain.com]</span><span>Houston, Texas, USA</span>
+        <span style="display: flex; gap: 8px; padding-top: 4px">
+          <a href="#top" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; box-shadow: inset 0 0 0 1px #ffffff33"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path></svg></a>
+          <a href="#top" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; box-shadow: inset 0 0 0 1px #ffffff33"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg></a>
+          <a href="#top" aria-label="YouTube" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 22px; box-shadow: inset 0 0 0 1px #ffffff33"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z"></path></svg></a>
+        </span>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid #ffffff1f; font-size: 13px"><span>© 2026 Structural Acrylic Systems, LLC. All rights reserved.</span><span style="display: flex; gap: 24px"><a href="#top">Privacy Policy</a><a href="#top">Terms</a></span></div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { faq: 0, step: 0, fstage: 1, menu: false };
+  }
+  renderVals() {
+    const I = {
+      c385: './assets/5d7bcc801adac727a0776ddae8990477.jpg', c394: './assets/029debd378300319d616b51df9e58714.jpg', c400: './assets/b965119dd82acd3d263984228dcb23d7.jpg',
+      c408: './assets/0e79903d69664deb830d59b448139ecb.jpg', c411: './assets/c7b8334e2b7306163f7ddf38bb3386e1.jpg', c440: './assets/e79dc0ae2e07e80822658f762baaed0f.jpg',
+      c639: './assets/da08b2474e1152c78e91873ee4655eaf.jpg', c869: './assets/a8e8f3676f885fc0dc96e0623eeb495a.jpg', c870: './assets/978ebc356a34f1c544500fa1ce727985.jpg'
+    };
+    const steps = [
+      { title: 'Engineering & Planning', desc: 'We review your drawings and site, then complete load calculations and shop drawings before anything is fabricated.' },
+      { title: 'Fabrication', desc: 'Your acrylic is fabricated in Houston, Texas to exact specifications — cut, bonded and polished for clarity.' },
+      { title: 'Delivery & Installation', desc: 'Our own crew delivers, rigs and sets every panel, working alongside your builder and GC on site.' },
+      { title: 'Sealing & Aftercare', desc: 'Waterproofing and sealing, then inspection and refurbishment support for the life of the structure.' }
+    ].map((s, i) => {
+      const on = i === this.state.step;
+      const imgs = [I.c385, I.c869, I.c400, I.c639];
+      const alts = ['Prepared channel and drawings stage', 'Fabricated acrylic panel lifted by crane', 'SAS crew setting a panel beside a pool', 'Diver inspecting a finished acrylic window'];
+      return { ...s, n: i + 1, img: imgs[i], alt: alts[i], on: on ? 'true' : 'false',
+        bg: on ? '#0a1628' : '#ffffff', fg: on ? '#f5f5f5' : '#0a1628', ring: on ? '#0a1628' : '#e6e9ed',
+        numBg: on ? '#f5f5f5' : '#f3f5f7', numFg: on ? '#0a1628' : '#0a1628', bar: i <= this.state.step ? '#c5ccd5' : '#ffffff33',
+        pick: () => { if (this.state.step !== i) this.setState({ step: i }); } };
+    });
+    const cur = steps[this.state.step];
+    const caps = [
+      { title: 'Fabrication', desc: 'Custom structural acrylic to exact specifications, US-made.', img: I.c869, alt: 'Structural acrylic panel being lifted into place' },
+      { title: 'Installation', desc: 'Professional installation by our own crew.', img: I.c400, alt: 'SAS crew setting an acrylic panel beside a pool' },
+      { title: 'Inspection', desc: 'Structural assessment and condition reporting.', img: I.c639, alt: 'Diver inspecting an underwater acrylic window' },
+      { title: 'Refurbishment', desc: 'Restoring clarity and structural integrity.', img: I.c408, alt: 'Acrylic panel set level beside a pool' },
+      { title: 'Waterproofing', desc: 'Long-lasting sealant for acrylic joints and frames.', img: I.c440, alt: 'Acrylic channel and spa wall prepared for sealing' },
+      { title: 'Engineering Support', desc: 'Technical input from concept through construction drawings.', img: I.c385, alt: 'Prepared concrete channel for an acrylic panel' }
+    ];
+    const solutions = [
+      { title: 'Acrylic Pool Windows', desc: 'Custom structural acrylic viewing panels for luxury residential and commercial pools.', img: I.c639, alt: 'Underwater acrylic pool window' },
+      { title: 'Acrylic Pool Walls', desc: 'Full-height transparent pool walls, engineered and installed by one team.', img: I.c400, alt: 'Acrylic pool wall installation' },
+      { title: 'Custom & Curved Panels', desc: 'Panels for curved, angled, corner and other complex configurations.', img: I.c869, alt: 'Large acrylic panel on a crane' },
+      { title: 'Spa & Channel Walls', desc: 'Acrylic spa edges and channel walls with sealed, watertight joints.', img: I.c440, alt: 'Acrylic channel and spa' },
+      { title: 'Aquarium & Habitat Windows', desc: 'Large-format viewing panels for public aquariums and zoos.', img: I.c394, alt: 'Panel channel being prepared' },
+      { title: 'Restoration & Polishing', desc: 'Bringing existing acrylic back to optical clarity, in place.', img: I.c408, alt: 'Finished acrylic panel beside a pool' }
+    ];
+    const industries = [
+      { title: 'Luxury Pools', sub: 'Viewing panels, custom installations, complete pool glazing', img: I.c400, alt: 'Luxury pool with acrylic panel', href: '/industries/#luxury-pools' },
+      { title: 'Public Aquariums', sub: 'Large-format acrylic, tunnels, deep tanks', img: I.c639, alt: 'Underwater acrylic viewing window', href: '/industries/#public-aquariums' },
+      { title: 'Zoos and Wildlife Parks', sub: 'Habitat viewing panels, barrier glazing', img: I.c440, alt: 'Acrylic habitat wall under construction', href: '/industries/#zoos' },
+      { title: 'Architectural', sub: 'Structural acrylic for commercial projects', img: I.c870, alt: 'Acrylic panel delivered by crane', href: '/industries/#architectural' }
+    ];
+    const faqs = [
+      { q: 'Why work with SAS?', a: 'You work directly with Bart Baker and a team with 30+ years in structural acrylic. Engineering, fabrication, installation and aftercare stay under one roof, so nothing is lost between hand-offs.' },
+      { q: 'Where is your acrylic fabricated?', a: 'In Houston, Texas. US fabrication means no overseas lead times and direct oversight of every panel.' },
+      { q: 'Do you provide engineering and drawings?', a: 'Yes. Load calculations and drawings are completed before fabrication starts, and we coordinate with your engineer of record.' },
+      { q: 'Can you work with my builder or GC?', a: 'Yes. We regularly join pool builders, architects and general contractors as the structural acrylic specialist on the project.' },
+      { q: 'How long does a project take?', a: '[Typical lead time to confirm with SAS] — it depends on panel size, thickness and site access. We give you a schedule with the quote.' },
+      { q: 'Can existing acrylic be refurbished?', a: 'Often, yes. We inspect the panel, then restore clarity and seal joints in place wherever the structure allows.' },
+      { q: 'Do you install outside Texas?', a: '[Confirm service area] — SAS supports projects across the United States.' },
+      { q: 'What warranty do you offer?', a: '[Warranty terms to confirm with SAS].' }
+    ];
+    const open = this.state.faq;
+    const items = faqs.map((f, i) => ({ ...f, open: i === open, expanded: i === open ? 'true' : 'false', sign: i === open ? '−' : '+',
+      iconBg: i === open ? '#0a1628' : '#ffffff', iconFg: i === open ? '#f5f5f5' : '#0a1628',
+      toggle: () => this.setState({ faq: this.state.faq === i ? -1 : i }) }));
+    const reelBase = [I.c870, I.c400, I.c408, I.c869, I.c440, I.c385];
+    const fsData = [
+      { title: 'Channel prepared', desc: 'Load calculations and drawings done, the concrete channel is prepped to receive the panel.', img: I.c385, alt: 'Concrete channel prepared for the acrylic panel' },
+      { title: 'Panel craned in', desc: 'The US-fabricated acrylic panel is lifted over the house and lowered into position.', img: I.c870, alt: 'Crane lifting the acrylic panel over the job site' },
+      { title: 'Set & levelled', desc: 'Our crew rigs, sets and levels the panel alongside the pool builder.', img: I.c400, alt: 'SAS crew setting the panel beside the pool' },
+      { title: 'Sealed & finished', desc: 'Waterproofed, sealed and ready for water — one team, start to finish.', img: I.c408, alt: 'Finished acrylic panel set level beside the pool' }
+    ];
+    const fsi = this.state.fstage;
+    const fstages = fsData.map((b, k) => {
+      const on = k === fsi;
+      return { ...b, n: k + 1, on: on ? 'true' : 'false', bg: on ? '#f5f5f5' : '#ffffff0a', fg: on ? '#0a1628' : '#f5f5f5', ring: on ? '#f5f5f5' : '#ffffff1f',
+        numFg: on ? '#5a6270' : '#aab2bd', op: on ? '1' : '0.75', pick: () => { if (this.state.fstage !== k) this.setState({ fstage: k }); } };
+    });
+
+    const fdiffs = [
+      { t: 'US-Fabricated', d: 'Built in Houston, Texas. No overseas lead times.', icon: 'M4 21V4M4 4h12l-2 4 2 4H4' },
+      { t: 'Engineering-First', d: 'Load calculations and drawings before fabrication starts.', icon: 'M4 20L20 4M14 4h6v6M7 13l4 4' },
+      { t: 'Full-Scope Ownership', d: 'One team from engineering through post-install.', icon: 'M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z' },
+      { t: 'Founder-Led', d: 'Bart Baker personally oversees every engagement.', icon: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0' }
+    ].map((d, k) => {
+      const hi = k === 3;
+      return { ...d, bg: hi ? '#0a1628' : '#ffffff', fg: hi ? '#f5f5f5' : '#0a1628', ring: hi ? '#0a1628' : '#e6e9ed', muted: hi ? '#c5ccd5' : '#5a6270', iconBg: hi ? '#f5f5f5' : '#0a1628', iconFg: hi ? '#0a1628' : '#f5f5f5' };
+    });
+
+    const stats = [
+      { h: '30+ Years', sub: 'Structural acrylic experience', icon: 'M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z' },
+      { h: 'US-Fabricated', sub: 'Houston, Texas. No overseas lead times.', icon: 'M4 21V4M4 4h12l-2 4 2 4H4' },
+      { h: 'Full Scope, One Team', sub: 'Engineering to installation', icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM17 11a3 3 0 1 0 0-6M3 21v-1a6 6 0 0 1 12 0v1M17 14a5 5 0 0 1 4 5v2' },
+      { h: 'Founder-Led', sub: 'Bart Baker oversees every project', icon: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0' }
+    ].map((x, k) => ({ ...x, divider: k === 0 ? 'none' : 'inset 1px 0 0 #dfe3e8' }));
+
+    return { menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }), stats, fdiffs, fstages, fs: { ...fsData[fsi], n: fsi + 1 }, fsProgress: ((fsi + 1) * 25) + '%', reel: reelBase.concat(reelBase), steps, cur, caps, solutions, industries, faqCols: [{ items: items.slice(0, 4) }, { items: items.slice(4) }] };
+  }
+}
+</script>
+</body>
+</html>
